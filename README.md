@@ -1,6 +1,6 @@
 # Document Graph
 ## Data Model
-![](Document%20Graph/IMG_0108.PNG)
+![](https://github.com/coppetti/document-graph-overview/blob/master/D313907F-D23D-4816-96C3-910F18F304BC.png)
 
 ### Nodes
 Document Graph data model represents the following Nodes (entities):
