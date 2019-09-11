@@ -29,3 +29,27 @@ The model also represents several relationships across these nodes, such as:
 
 #### Ontology Relationships
 Those relationships describe the Document Metadata
+
+### Accessing the data
+
+On browser at:
+`35.176.13.253:7474/browser/`
+
+### Running some Queries
+
++ References to a Document:
+
+```
+MATCH (d:Document)<-[:HAS_REFERENCE]-(x)
+WHERE d.document_name = '(EU) 2016/679'
+RETURN d,x LIMIT 25
+```
+
++ Find All documents that concern to `payment service user` and `payment service provider`and the documents that have any reference (in/out) to them:
+
+```
+MATCH (t:Term)--(n:Node)-[r:HAS_REFERENCE]->(x)
+WHERE toLower(t.term) CONTAINS 'payment service user' OR toLower(t.term) CONTAINS 'payment service provider'
+
+return * LIMIT 100
+```
